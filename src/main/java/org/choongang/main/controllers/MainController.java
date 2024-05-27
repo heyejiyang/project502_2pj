@@ -2,6 +2,9 @@ package org.choongang.main.controllers;
 
 
 import org.choongang.global.AbstractController;
+import org.choongang.global.constants.Menu;
+import org.choongang.main.MainRouter;
+import org.choongang.template.Templates;
 
 /*
 * 메인 컨트롤러
@@ -10,6 +13,6 @@ import org.choongang.global.AbstractController;
 public class MainController extends AbstractController {
     @Override
     public void show() {
-        System.out.println("메인 메뉴~~");
+        Templates.getInstance().render(Menu.MAIN);
     }
 }

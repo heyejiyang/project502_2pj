@@ -2,6 +2,7 @@ package org.choongang.global;
 
 import org.choongang.global.constants.Menu;
 import org.choongang.main.MainRouter;
+import org.choongang.template.Templates;
 
 import java.util.Scanner;
 
@@ -24,7 +25,7 @@ public abstract class AbstractController implements Controller {
     //상단 공통 출력 부분
     public void common() {
         System.out.println("학생 관리 프로그램 ver1.0");
-        System.out.println("----------------------------------");
+        System.out.println(Templates.getInstance().dpubleLine());
     }
 
     /*입력 항목
@@ -32,9 +33,11 @@ public abstract class AbstractController implements Controller {
     * - 숫자: 메뉴 항목
     * */
     public void prompt(){
+        System.out.println(Templates.getInstance().dpubleLine());
         System.out.print("메뉴 선택: ");
         String menu = sc.nextLine();
         if(menu.equals("q")|| menu.equals("quit")||menu.equals("exit")){
+            System.out.println("종료합니다.");
             System.exit(0); //0 - 정상종료, 1 - 비정상 종료
         }
 
